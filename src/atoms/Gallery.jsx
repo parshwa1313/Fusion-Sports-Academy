@@ -105,8 +105,8 @@ const Gallery = () => {
             onClick={() => setCategory(cat)}
             className={`px-5 py-3 rounded-xl transition duration-300 text-lg font-semibold ${
               category === cat
-                ? "bg-blue-600 text-white shadow-lg"
-                : "bg-gray-300 text-gray-800 hover:bg-blue-600 hover:text-white"
+                ? "bg-green-600 text-white shadow-lg "
+                : "bg-white text-green-600 hover:bg-green-600 hover:text-white"
             }`}
           >
             {cat}
@@ -114,7 +114,7 @@ const Gallery = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 p-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  gap-6 p-4">
         {images.map((src, index) => (
           <motion.img
             key={index}

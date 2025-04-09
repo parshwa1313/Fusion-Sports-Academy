@@ -52,7 +52,7 @@ export default function CommunityGrid() {
           >
             <Link to={category.path} className="flex flex-col items-center">
               <span className="text-7xl mb-2">{category.icon}</span>
-              <h3 className="text-[28px] font-semibold text-center text-gray-800">
+              <h3 className="text-[24px] font-semibold text-center text-gray-800">
                 {category.name}
               </h3>
             </Link>

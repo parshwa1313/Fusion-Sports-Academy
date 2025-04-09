@@ -6,13 +6,13 @@ const sports = [
   {
     img: "https://looking-for-soccer.com/wp-content/uploads/2021/12/football-g475eabc40_1280-e1643718463690.jpg",
     title: "Football",
-    desc: "Football is a universal game of passion, strategy, and skill. ARA FC provides a full artificial turf field, training facilities, and in-house physio therapists to support players. Technical Drills: Ball control, precision passing, tactical setups. Skill Drills: Focus on footwork, shot selection, spin and pace bowling techniques.  Facilities Needed: Football pitch, goalposts, cones, agility ladders, video analysis tools.",
+    desc: "Football is a universal game of passion, strategy, and skill. ARA FC provides a full artificial turf field, training facilities, and in-house physio therapists to support players. Technical Drills: Ball control, precision passing, tactical setups. Skill Drills:   Facilities Needed: Football pitch, goalposts, cones, agility ladders, video analysis tools.",
     path: "/football"
   },
   {
     img: "https://images.deccanherald.com/deccanherald%2Fimport%2Fsites%2Fdh%2Ffiles%2Farticleimages%2F2021%2F11%2F20%2Ftennis-istock-1043790-1635085470-1052713-1637396249.jpg?auto=format%2Ccompress&fmt=webp&fit=max&format=webp&q=70&w=400&dpr=2",
     title: "Tennis",
-    desc: "Tennis is a sport that requires both physical and mental stamina. Ahmedabad Racquet Academy offers seven courts, top-tier coaching, and a space for all skill levels. On-Court Drills: Focus on stroke mechanics, rally consistency, and speed drills.  Match Simulation: Practice matches to improve decision-making under pressure. Facilities Needed: Hard court, clay court, or grass court, ball machines, fitness equipment.",
+    desc: "Tennis is a sport that requires both physical and mental stamina. Ahmedabad Racquet Academy offers seven courts, top-tier coaching, and a space for all skill levels. On-Court Drills: Focus on stroke mechanics, rally consistency, and speed drills.  Match Simulation: Facilities Needed: Hard court, clay court, or grass court, ball machines, fitness equipment.",
     path: "/tennis"
   },
   {
@@ -57,12 +57,12 @@ const Sports = () => {
           </motion.div>
         </div>
 
-        <div className="container mx-auto px-2 py-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="container mx-auto px-2 py-4 p-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
           {sports.map((sport, index) => (
             <Link
               to={sport.path}
               key={index}
-              className="relative group shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"
+              className="relative group shadow-md rounded-lg overflow-hidden transition-transform transform "
             >
               <motion.div
                 initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
