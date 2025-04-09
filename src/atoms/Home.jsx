@@ -138,7 +138,7 @@ export default function MergedComponent() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative w-screen min-h-[44rem] flex items-center justify-center bg-cover bg-center snap-start" style={{ backgroundImage: "url('https://images.livemint.com/img/2020/01/10/1600x900/a25627b8-3056-11ea-abf9-d6598481f54e_1578651806065_1578651853959.jpg')" }}>
+      <div className="relative w-screen min-h-[43rem] flex items-center justify-center bg-cover bg-center snap-start" style={{ backgroundImage: "url('https://images.livemint.com/img/2020/01/10/1600x900/a25627b8-3056-11ea-abf9-d6598481f54e_1578651806065_1578651853959.jpg')" }}>
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 text-white text-center max-w-md px-5 mt-20">
           <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -161,7 +161,7 @@ export default function MergedComponent() {
       </div>
 
       {/* Infrastructure Section */}
-      <div className="relative mx-auto flex flex-col items-center py-8 overflow-hidden min-h-[36rem] snap-start">
+      <div className="relative mx-auto flex flex-col items-center py-8 overflow-hidden min-h-[34rem] snap-start">
         <h2 className="text-3xl font-bold text-green-600 mt-2 text-center">Infrastructure Services</h2>
         <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-8 w-full">
 
@@ -169,7 +169,7 @@ export default function MergedComponent() {
             <button
               key={sport}
               onClick={() => setSelectedSport(sport)}
-              className={`transition-colors duration-200 py-2 rounded-md text-xl font-semibold focus:outline-none ${
+              className={`transition-colors duration-200 py-2 rounded-md text-xl font-semibold focus:outline-none mt-6 ${
                 selectedSport === sport ? "text-green-600" : "text-black"
               }`}
             >
@@ -181,15 +181,15 @@ export default function MergedComponent() {
           key={selectedSport}
           src={sportsData[selectedSport]}
           alt={selectedSport}
-          className="w-full md:w-3/4 lg:w-2/3 max-h-[22rem] rounded-lg shadow-lg object-cover mt-4"
+          className="w-full md:w-3/4 lg:w-2/3 max-h-[28rem] rounded-lg shadow-lg object-cover mt-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
         />
-        <div className="text-center mt-4 px-4">
+        <div className="text-center mt-6 px-4">
           <h3 className="text-2xl font-bold">{selectedSport}</h3>
-          <p className="text-lg font-serif max-w-xl mx-auto">
+          <p className="text-lg font-serif max-w-xl mx-auto mt-2">
             Experience world-class {selectedSport} courts built for performance and safety.
           </p>
         </div>
