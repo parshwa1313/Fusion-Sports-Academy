@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -26,11 +27,11 @@ const newsData = [
     image: "https://www.theshots.co.uk/wp-content/uploads/2024/09/academy-trials.png",
     link: "/trials"
   },
-    {
+  {
     title: "Junior Badminton League Kicks Off This Weekend",
     category: "Events",
     image: "https://upload.wikimedia.org/wikipedia/en/a/af/Junior_badminton_league.jpg",
-     link: "/junior"
+    link: "/junior"
   },
   {
     title: "Advanced Strength & Conditioning Sessions Now Available",
@@ -59,36 +60,53 @@ const newsData = [
 ];
 
 export default function NewsSection() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
-    <section className="relative w-full">
+    <section className="relative w-full bg-gray-100">
       {/* Hero Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative h-96 w-full bg-cover bg-center flex items-center justify-center text-white text-3xl font-bold object-cover"
-        style={{ backgroundImage: "url('https://t4.ftcdn.net/jpg/03/69/50/41/360_F_369504123_BiPobs8I3sIdmlmCRyMdFHK8vYwnzym1.jpg')" }}> 
-        News and Tips
-      </motion.div>
+      <div className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
+        <img
+          src="https://t4.ftcdn.net/jpg/03/69/50/41/360_F_369504123_BiPobs8I3sIdmlmCRyMdFHK8vYwnzym1.jpg"
+          alt="Tennis Club"
+          className="w-full h-full object-cover"
+        />
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30"
+        >
+          <h1 className="text-white text-4xl md:text-5xl font-bold text-center">
+            News & Tips
+          </h1>
+        </motion.div>
+      </div>
 
       {/* News Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6 p-4">
         {newsData.map((news, index) => (
-          <motion.div 
-            key={index} 
-            className="relative overflow-hidden rounded-lg shadow-lg"
-            initial={{ opacity: 0, scale: 0.8 }}
+          <motion.div
+            key={index}
+            className="relative overflow-hidden rounded-lg shadow-lg bg-white transition-transform transform hover:scale-105"
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
             <Link to={news.link} className="block">
-              <div className="relative w-full h-60 bg-cover bg-center"
-                   style={{ backgroundImage: `url(${news.image})` }}>
-                <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+              <div
+                className="relative w-full h-48 sm:h-60 bg-cover bg-center"
+                style={{ backgroundImage: `url(${news.image})` }}
+              >
+                <div className="absolute inset-0 bg-black bg-opacity-40"></div>
               </div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-sm uppercase">{news.category}</p>
-                <h3 className="text-lg font-bold">{news.title}</h3>
+              <div className="p-4">
+                <p className="text-sm uppercase text-gray-500">{news.category}</p>
+                <h3 className="text-lg font-semibold text-gray-800 mt-1">
+                  {news.title}
+                </h3>
               </div>
             </Link>
           </motion.div>

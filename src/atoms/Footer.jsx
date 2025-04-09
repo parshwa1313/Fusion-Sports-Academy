@@ -12,10 +12,11 @@ export default function Footer() {
 
               {/* Quick Links */}
               <div className="text-center">
-                  <h3 className="text-lg font-semibold text-orange-500">Navigate</h3>
+                  <h3 className="text-lg font-semibold text-orange-500">Quick links</h3>
                   <ul className="mt-2 space-y-1 text-sm">
                       <li><a href="/" className="hover:text-orange-400 transition">Home</a></li>
                       <li><a href="/academy" className="hover:text-orange-400 transition">Academy</a></li>
+                      <li><a href="/community" className="hover:text-orange-400 transition">Community</a></li>
                       <li><a href="/events" className="hover:text-orange-400 transition">Events</a></li>
                       <li><a href="/sports" className="hover:text-orange-400 transition">Sports</a></li>
                       <li><a href="/gallery" className="hover:text-orange-400 transition">Gallery</a></li>

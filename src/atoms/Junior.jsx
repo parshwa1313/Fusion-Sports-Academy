@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Junior = () => {
@@ -11,31 +11,35 @@ const Junior = () => {
         "https://www.pnbmetlife.com/content/dam/pnb-metlife/jbc/JBC_Gallary_2023_13.jpg",
         "https://sc0.blr1.cdn.digitaloceanspaces.com/article/195181-thrjlostum-1697973844.jpg"
     ];
-    
+
     const [selectedImage, setSelectedImage] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
-    
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const openModal = (index) => {
         setSelectedImage(images[index]);
         setCurrentIndex(index);
     };
-    
+
     const closeModal = () => setSelectedImage(null);
-    
+
     const showPrev = () => {
         if (currentIndex > 0) {
             setCurrentIndex(currentIndex - 1);
             setSelectedImage(images[currentIndex - 1]);
         }
     };
-    
+
     const showNext = () => {
         if (currentIndex < images.length - 1) {
             setCurrentIndex(currentIndex + 1);
             setSelectedImage(images[currentIndex + 1]);
         }
     };
-    
+
     return (
         <section className="w-full">
             <motion.div
@@ -43,27 +47,34 @@ const Junior = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 className="w-full text-center py-6"
-            ></motion.div>
+            >
+                {/* Add a title or intro text here if needed */}
+            </motion.div>
 
-            <div className="relative">
+            {/* Hero Section */}
+            <div className="relative w-full">
                 <img
                     src="https://supra.net.au/wp-content/uploads/2024/07/AdobeStock_497080892-scaled-e1721365280148.jpeg"
                     alt="Junior Badminton League"
-                    className="w-full h-80 object-cover"
+                    className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                    <h2 className="text-white text-4xl font-bold">Junior Badminton League</h2>
+                    <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">
+                        Junior Badminton League
+                    </h2>
                 </div>
             </div>
-            <div className="p-3 flex ">
-                <Link to="/news" className="text-gray-700 text-xl mr-2 flex items-center">
+
+            {/* Back Button */}
+            <div className="p-4 md:p-6 flex justify-start items-center">
+                <Link to="/news" className="text-gray-700 text-lg sm:text-xl flex items-center">
                     <span className="material-symbols-outlined">arrow_back_ios_new</span>
-                    <span className="">Back</span>
                 </Link>
-                
             </div>
+
+            {/* Content Section */}
             <motion.div
-                className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-12"
+                className="flex flex-col md:flex-row items-center gap-6 md:gap-8 p-6 md:p-12"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
@@ -78,7 +89,7 @@ const Junior = () => {
                     <img
                         src="https://upload.wikimedia.org/wikipedia/en/a/af/Junior_badminton_league.jpg"
                         alt="League Matches"
-                        className="w-full rounded-lg shadow-lg h-80 object-cover "
+                        className="w-full rounded-lg shadow-lg h-[250px] sm:h-[350px] md:h-[400px] object-cover"
                     />
                 </motion.div>
 
@@ -88,11 +99,11 @@ const Junior = () => {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1, delay: 0.5 }}
                 >
-                    <h2 className="text-4xl font-bold mb-6 text-green-600">
-                       Junior Badminton League - The Path to Glory
+                    <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-green-600">
+                        Junior Badminton League - The Path to Glory
                     </h2>
-                    <p className="text-2xl mb-4 font-serif">
-                        The Junior Badminton League is a platform for young athletes to showcase their talent and compete at the highest level. 
+                    <p className="text-xl sm:text-2xl mb-4 font-serif leading-relaxed">
+                        The Junior Badminton League is a platform for young athletes to showcase their talent and compete at the highest level.
                         With structured matches, professional coaching, and an opportunity to be recognized, this is the perfect stage for budding badminton champions.
                         <br /><br />
                         Join us in this exhilarating journey and be a part of the future of badminton. Your skills, dedication, and passion could lead you to new heights!
@@ -100,13 +111,14 @@ const Junior = () => {
                 </motion.div>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 mt-2 p-6 text-center w-full">
+            {/* Gallery Section */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-6 mt-4 p-6">
                 {images.map((src, index) => (
                     <motion.img
                         key={index}
                         src={src}
                         alt={`League Match ${index + 1}`}
-                        className="w-full h-52 object-cover rounded-lg cursor-pointer transition-transform hover:scale-105"
+                        className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] object-cover rounded-lg cursor-pointer transition-transform hover:scale-105"
                         onClick={() => openModal(index)}
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -115,6 +127,7 @@ const Junior = () => {
                 ))}
             </div>
 
+            {/* Modal Preview */}
             {selectedImage && (
                 <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
                     <button className="absolute top-5 right-5 text-white text-3xl" onClick={closeModal}>
@@ -127,7 +140,11 @@ const Junior = () => {
                     >
                         &#60;
                     </button>
-                    <img src={selectedImage} alt="Selected Match" className="max-w-[90%] max-h-[80vh] rounded-lg shadow-lg" />
+                    <img
+                        src={selectedImage}
+                        alt="Selected Match"
+                        className="max-w-[90%] max-h-[80vh] rounded-lg shadow-lg"
+                    />
                     <button
                         className="absolute right-5 text-white text-3xl"
                         onClick={showNext}

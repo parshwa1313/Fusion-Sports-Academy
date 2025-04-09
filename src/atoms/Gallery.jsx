@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Gallery = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const allImages = {
     Cricket: [
       "https://assets.telegraphindia.com/telegraph/2022/Mar/1647082297_cap1.jpg",
@@ -75,32 +79,34 @@ const Gallery = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
-      <section className="w-full relative">
+    <div className="relative w-full bg-gray-50 min-h-screen">
+      <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
         <img
           src="https://www.goteambot.com/wp-content/uploads/elementor/thumbs/sports-equipment-7T64RVL-p51pysoivenya95vn27097t3u83umj7c1vdcrstrig.jpg"
-          alt="Gallery Header"
-          className="w-full h-96 object-cover md:h-[50vh] lg:h-[60vh]"
+          alt="Tennis Club"
+          className="w-full h-full object-cover"
         />
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30"
         >
-          <h1 className="text-white text-4xl md:text-5xl font-bold">Our Gallery</h1>
+          <h1 className="text-white text-4xl md:text-5xl font-bold text-center">
+            Our Gallery
+          </h1>
         </motion.div>
-      </section>
+      </div>
 
-      <div className="flex flex-wrap justify-center gap-4 p-4">
-        {['All', 'Football', 'Badminton', 'Tennis', 'Cricket'].map((cat) => (
+      <div className="flex flex-wrap justify-center gap-4 my-6">
+        {["All", "Football", "Badminton", "Tennis", "Cricket"].map((cat) => (
           <button
             key={cat}
             onClick={() => setCategory(cat)}
-            className={`px-4 py-2 rounded-lg transition text-xl font-semibold ${
+            className={`px-5 py-3 rounded-xl transition duration-300 text-lg font-semibold ${
               category === cat
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-800 hover:bg-blue-600 hover:text-white"
+                ? "bg-blue-600 text-white shadow-lg"
+                : "bg-gray-300 text-gray-800 hover:bg-blue-600 hover:text-white"
             }`}
           >
             {cat}
@@ -108,28 +114,28 @@ const Gallery = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 p-4">
         {images.map((src, index) => (
           <motion.img
             key={index}
             src={src}
             alt={`Event ${index + 1}`}
-            className="w-full h-48 object-cover rounded-lg cursor-pointer transition-transform transform hover:scale-105"
+            className="w-full h-52 object-cover rounded-lg cursor-pointer shadow-md transition-transform transform hover:scale-105"
             onClick={() => openModal(index)}
           />
         ))}
       </div>
 
       {selectedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
           <button
-            className="absolute top-5 right-5 text-white text-3xl"
+            className="absolute top-4 right-4 text-white text-3xl"
             onClick={closeModal}
           >
             &times;
           </button>
           <button
-            className="absolute left-5 text-white text-3xl"
+            className="absolute left-4 text-white text-3xl"
             onClick={showPrev}
             disabled={currentIndex === 0}
           >
@@ -138,10 +144,10 @@ const Gallery = () => {
           <img
             src={selectedImage}
             alt="Selected"
-            className="max-w-full max-h-[90vh] rounded-lg shadow-lg"
+            className="max-w-full max-h-[90vh] rounded-lg shadow-xl"
           />
           <button
-            className="absolute right-5 text-white text-3xl"
+            className="absolute right-4 text-white text-3xl"
             onClick={showNext}
             disabled={currentIndex === images.length - 1}
           >

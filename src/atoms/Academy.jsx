@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const SportsClub = () => {
-  
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
-    <section className="w-full">
+    <section className="w-full bg-gray-50">
       {/* Hero Image Section */}
-      <div className="relative min-h-[250px]">
+      <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
         <img
-          src="https://poonaclubltd.com/wp-content/uploads/2017/04/Tennis.jpg"
+          src="https://images.unsplash.com/photo-1582019887147-f7b01b4ba41e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Tennis Club"
           className="w-full h-full object-cover"
         />
@@ -16,9 +19,11 @@ const SportsClub = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30"
         >
-          <h1 className="text-white text-5xl font-bold">Our Academy</h1>
+          <h1 className="text-white text-4xl md:text-5xl font-bold text-center">
+            Our Academy
+          </h1>
         </motion.div>
       </div>
 
@@ -28,59 +33,59 @@ const SportsClub = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="text-center p-6"
+        className="text-center px-6 py-8 md:px-12 lg:px-20"
       >
-        <h2 className="text-green-600 text-4xl font-bold mt-8">Fusion Sports Academy</h2>
-        <p className="text-gray-700 mt-8  text-2xl font-serif">
+        <h2 className="text-orange-500 text-3xl md:text-4xl font-bold ">
+          Fusion Sports Academy
+        </h2>
+        <p className="text-gray-700 mt-4 text-lg md:text-xl leading-relaxed font-serif">
           At Fusion Sports Academy, we are passionate about nurturing talent and
-          empowering athletes to reach their full potential. With a team of
-          highly skilled coaches, state-of-the-art facilities, and a
-          comprehensive training program, we provide exceptional coaching in
-          tennis, football, cricket, and badminton. Our commitment to
-          excellence, personalized approach, and unwavering support make us the
-          preferred choice for athletes seeking professional guidance and
-          success. Join us and embark on an exciting journey of growth,
-          achievement, and unforgettable sporting experiences.
+          empowering athletes to reach their full potential. With skilled coaches,
+          top-notch facilities, and comprehensive training, we offer exceptional
+          coaching in tennis, football, cricket, and badminton. Join us for an
+          exciting journey of growth and unforgettable sporting experiences.
         </p>
       </motion.div>
 
       {/* Sports Courses Section */}
-      <section className="flex flex-col md:flex-row mt-8 mb-4 items-center justify-center px-6 py-2 bg-white">
+      <section className="flex flex-col md:flex-row items-center justify-center px-6 py-8 bg-white gap-6 md:gap-12">
         {/* Image Section */}
-        <motion.div 
+        <motion.div
           className="w-full md:w-1/2"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <img 
-            src="https://cdn.pixabay.com/photo/2020/11/27/18/59/tennis-5782695_1280.jpg" 
-            alt="Sports Training" 
-            className="rounded-lg w-full max-h-[32rem] object-cover"
+          <img
+            src="https://cdn.pixabay.com/photo/2020/11/27/18/59/tennis-5782695_1280.jpg"
+            alt="Sports Training"
+            className="rounded-lg w-full max-h-[32rem] object-cover shadow-lg"
           />
         </motion.div>
 
         {/* Text Content Section */}
-        <motion.div 
-          className="w-full md:w-1/2 md:pl-12 mt-6 md:mt-0"
+        <motion.div
+          className="w-full md:w-1/2 text-center md:text-left"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-gray-500 text-lg uppercase">Professional and certified teachings</p>
-          <h2 className="text-green-600 text-4xl font-bold mt-2">
-            The best courses for all children
+          <p className="text-gray-500 text-sm uppercase tracking-wide">Professional & Certified Teachings</p>
+          <h2 className="text-green-600 text-3xl md:text-4xl font-bold mt-2">
+            The Best Courses for All Ages
           </h2>
-          <p className="text-gray-700 mt-4 text-lg">
-            Discover the best sports courses for kids at NEON Sports Academy. Our tennis, football, cricket, and badminton programs offer expert coaching, fun-filled activities, and a nurturing environment for young athletes to thrive and excel.
+          <p className="text-gray-700 mt-4 text-lg leading-relaxed">
+            Discover the best sports courses for kids and adults at Fusion Sports Academy.
+            Our programs offer expert coaching, fun activities, and a nurturing environment
+            for young athletes to thrive and excel.
           </p>
-          
+
           {/* Progress Bars */}
-          <div className="mt-6">
-            <p className="text-lg font-semibold text-green-600">Courses for adults</p>
+          <div className="mt-6 space-y-4">
+            <p className="text-lg font-semibold text-green-600">Courses for Adults</p>
             <div className="w-full bg-gray-200 rounded-full h-5 overflow-hidden">
-              <motion.div 
-                className="bg-green-600 h-full text-white text-xs flex items-center justify-center" 
+              <motion.div
+                className="bg-green-600 h-full text-white text-xs flex items-center justify-center"
                 initial={{ width: 0 }}
                 animate={{ width: "45%" }}
                 transition={{ duration: 1 }}
@@ -88,12 +93,11 @@ const SportsClub = () => {
                 45%
               </motion.div>
             </div>
-          </div>
-          <div className="mt-4">
-            <p className="text-lg font-semibold text-green-600">Courses for kids</p>
+
+            <p className="text-lg font-semibold text-green-600 mt-4">Courses for Kids</p>
             <div className="w-full bg-gray-200 rounded-full h-5 overflow-hidden">
-              <motion.div 
-                className="bg-green-700 h-full text-white text-xs flex items-center justify-center" 
+              <motion.div
+                className="bg-green-700 h-full text-white text-xs flex items-center justify-center"
                 initial={{ width: 0 }}
                 animate={{ width: "70%" }}
                 transition={{ duration: 1.2 }}
@@ -106,38 +110,37 @@ const SportsClub = () => {
       </section>
 
       {/* Coach Plans Section */}
-      <div className="p-6 bg-white text-center flex flex-col">
-        <h2 className="text-green-600 text-4xl font-bold mb-6">
-          Choose the perfect coach plan for you
+      <div className="p-6  text-center">
+        <h2 className="text-orange-500 text-3xl font-bold ">
+          Choose the Perfect Coach Plan for You
         </h2>
-        <div className="flex flex-col md:flex-row justify-center gap-6">
+        <div className="flex flex-col md:flex-row justify-center gap-6 px-4 mt-8">
           {/* Foundation Development Program */}
           <motion.div
             initial={{ x: "-100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative text-white p-6 rounded-lg shadow-lg w-full md:w-1/2 bg-cover bg-center flex items-center justify-center object-cover min-h-[35rem]"
+            transition={{ duration: 0.8 }}
+            className="relative bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2 min-h-[33rem] flex flex-col items-center justify-center"
             style={{
               backgroundImage:
                 "url('https://kidsstoppress.com/wp-content/uploads/2021/09/1538658807.BestTennisAcademiesInPune_KIDSSTOPPRESS.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
-            {/* Green Overlay */}
-            <div className="absolute inset-0 bg-green-600 opacity-70 rounded-lg space-y-4"></div>
-            
-            <div className="relative p-6 text-center">
+            <div className="absolute inset-0 bg-green-500 opacity-70 rounded-lg"></div>
+            <div className="relative text-white text-center p-4 space-y-4">
               <h3 className="text-2xl font-bold">Foundation Development Program</h3>
-              <p className="text-3xl font-bold">12 Months</p>
-              <p className="text-lg">(FOR BEGINNER)</p>
-              <ul className="mt-4 text-lg font-serif">
+              <p className="text-xl font-bold">12 Months (For Beginners)</p>
+              <ul className="text-lg list-disc list-inside">
                 <li>✔ Foundations for Future Champions</li>
                 <li>✔ Beginner's Path to Success</li>
                 <li>✔ Building Skills, Igniting Passion</li>
                 <li>✔ Nurturing Young Sporting Talent</li>
               </ul>
               <Link to="/foundation">
-                <button className="mt-6 items-center flex justify-center mx-auto w-40 px-4 py-2 bg-white text-orange-600 text-lg font-semibold rounded-lg border-2 border-orange-600 hover:bg-green-600 hover:text-white">
-                  BOOK NOW!
+                <button className="mt-4 px-6 py-2 bg-white text-green-500 font-semibold rounded-lg border-2 border-white hover:bg-green-700 hover:text-white transition">
+                  Book Now!
                 </button>
               </Link>
             </div>
@@ -147,33 +150,64 @@ const SportsClub = () => {
           <motion.div
             initial={{ x: "100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative text-white p-6 rounded-lg shadow-lg w-full md:w-1/2 h-96 bg-cover bg-center flex items-center justify-center min-h-[35rem]"
+            transition={{ duration: 0.8 }}
+            className="relative bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2 min-h-[30rem] flex flex-col items-center justify-center"
             style={{
               backgroundImage:
                 "url('https://thecoachcrew.com/wp-content/uploads/2022/08/pp1-1024x683-1.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
-            {/* Orange Overlay */}
             <div className="absolute inset-0 bg-orange-600 opacity-70 rounded-lg"></div>
-            <div className="relative p-6 text-center">
+            <div className="relative text-white text-center p-4 space-y-4">
               <h3 className="text-2xl font-bold">High Performance Program</h3>
-              <p className="text-3xl font-bold">12 Months</p>
-              <p className="text-lg">(FOR ADVANCED)</p>
-              <ul className="mt-4 text-lg font-serif">
+              <p className="text-xl font-bold">12 Months (For Advanced Players)</p>
+              <ul className="text-lg list-disc list-inside">
                 <li>✔ Elite Training for Excellence</li>
                 <li>✔ Taking Skills to New Heights</li>
                 <li>✔ Pushing Limits, Achieving Greatness</li>
-                <li>✔ Preparing for Pro tournaments</li>
+                <li>✔ Preparing for Pro Tournaments</li>
               </ul>
               <Link to="/performance">
-                <button className="mt-6 items-center flex justify-center mx-auto w-40 px-4 py-2 bg-white text-green-600 text-lg font-semibold rounded-lg border-2 border-green-600 hover:bg-orange-600 hover:text-white">
-                  BOOK NOW!
+                <button className="mt-4 px-6 py-2 bg-white text-orange-600 font-semibold rounded-lg border-2 border-white hover:bg-orange-600 hover:text-white transition">
+                  Book Now!
                 </button>
               </Link>
             </div>
           </motion.div>
         </div>
+        <div className="flex flex-col min-h-[41rem] items-center bg-white justify-center px-4 py-10 md:px-10 lg:px-20">
+      <h2 className="text-2xl md:text-3xl text-green-500 font-bold text-center mb-6">Our Approach</h2>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10 mt-2">
+        {/* Left Content */}
+        <div className="flex flex-col min-w-72">
+          <ul className="text-center space-y-3 text-xl md:text-xl font-serif">
+            <li>&#8226; Sport Selection</li>
+            <li>&#8226; Design Consultation</li>
+            <li>&#8226; Material selection and procurement</li>
+            <li>&#8226; Project Planning and Construction</li>
+          </ul>
+          <ul className="text-center space-y-3 text-xl md:text-xl font-serif  mt-24">
+            <li>&#8226; Training partner selection and contracting</li>
+            <li>&#8226; Pricing Plans and Hyperlocal marketing strategy</li>
+            <li>&#8226; Pay-to-play strategy implementation</li>
+          </ul>
+        </div>
+        
+        {/* Center Image */}
+        <div className="w-full max-w-sm md:max-w-lg flex justify-center">
+          <img src="https://previews.123rf.com/images/urfandadashov/urfandadashov1805/urfandadashov180500040/100957940-proactive-icon-isolated-on-white-background-vector-illustration.jpg" alt="Our Approach" className="w-full h-96 object-cover bg-gray-100" />
+        </div>
+        
+        {/* Right Content */}
+        <ul className="text-center space-y-3 text-xl md:text-xl max-w-md font-serif">
+          <li>&#8226; Enhanced revenue through best-in-class coaching</li>
+          <li>&#8226; Enhanced utilization in Pay to Play hours</li>
+          <li>&#8226; Create properties like leagues and tournaments for a 360° sustainable impact</li>
+        </ul>
+      </div>
+    </div>
       </div>
     </section>
   );
