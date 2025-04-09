@@ -34,31 +34,36 @@ export default function Header() {
 
         {/* Desktop Nav Links */}
        
-        <div className="hidden md:flex items-center space-x-6">
-          {navLinks.map((link) => (
+        <div className="hidden md:flex items-center space-x-24"> {/* Added space-x-16 here */}
+          {/* Desktop Nav Links */}
+          <div className="flex items-center space-x-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`text-md sm:text-lg font-medium relative transition-all duration-300 ${
+                  location.pathname === link.path
+                    ? "text-green-500"
+                    : "text-gray-800 hover:text-green-500"
+                }`}
+              >
+                {link.name}
+                {location.pathname === link.path && (
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-green-500 rounded-md"></span>
+                )}
+              </Link>
+            ))}
+          </div>
+
+          {/* Desktop Reserve Button */}
+          <div>
             <Link
-              key={link.name}
-              to={link.path}
-              className={`text-md sm:text-xl font-semibold relative transition-all duration-300 ${
-                location.pathname === link.path
-                  ? "text-green-500"
-                  : "text-gray-800 hover:text-green-500"
-              }`}
+              to="/details"
+              className="bg-green-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-600 text-sm sm:text-base"
             >
-              {link.name}
-              {location.pathname === link.path && (
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-green-500 rounded-md"></span>
-              )}
+              RESERVE A COURT
             </Link>
-          ))}
-           <div className="hidden md:block">
-          <Link
-            to="/details"
-            className="bg-green-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-600 text-sm sm:text-base"
-          >
-            RESERVE A COURT
-          </Link>
-        </div>
+          </div>
         </div>
        
         {/* Desktop Reserve Button */}
