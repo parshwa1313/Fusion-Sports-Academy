@@ -12,7 +12,7 @@ import Tennistournament from "./atoms/Tennistournament";
 import BadmintonChampionship from "./atoms/BadmintonChampionship";
 import Footballcontest from './atoms/Footballcontest';
 import CricketLeague from './atoms/Cricketleague';
-import Gallery from './atoms/gallery';
+import Gallery from "./atoms/Gallery";
 import BadmintonSection from './atoms/Badmintion';
 import TennisSection from './atoms/Tennnis ';
 import CricketSection from './atoms/Cricket';
