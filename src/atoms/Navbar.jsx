@@ -33,12 +33,13 @@ export default function Header() {
         </div>
 
         {/* Desktop Nav Links */}
+       
         <div className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
-              className={`text-md sm:text-lg font-medium relative transition-all duration-300 ${
+              className={`text-md sm:text-xl font-semibold relative transition-all duration-300 ${
                 location.pathname === link.path
                   ? "text-green-500"
                   : "text-gray-800 hover:text-green-500"
@@ -50,10 +51,7 @@ export default function Header() {
               )}
             </Link>
           ))}
-        </div>
-
-        {/* Desktop Reserve Button */}
-        <div className="hidden md:block">
+           <div className="hidden md:block">
           <Link
             to="/details"
             className="bg-green-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-600 text-sm sm:text-base"
@@ -61,7 +59,10 @@ export default function Header() {
             RESERVE A COURT
           </Link>
         </div>
-
+        </div>
+       
+        {/* Desktop Reserve Button */}
+       
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-gray-800 focus:outline-none"
