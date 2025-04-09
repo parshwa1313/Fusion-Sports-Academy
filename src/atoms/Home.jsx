@@ -98,7 +98,7 @@ export default function MergedComponent() {
       </div>
 
       {/* Features Section */}
-      <div className="w-screen flex flex-col items-center justify-center bg-white px-6 mt-12 snap-start max-h-[36rem]">
+      <div className="w-screen flex flex-col items-center justify-center bg-white px-6 mt-12 snap-start min-h-[40rem]">
       <div className="flex justify-center w-full mb-4">
           <h2 className="text-2xl font-bold text-green-600 text-center">Let's Get Stronger Together</h2>
         </div>
@@ -123,7 +123,7 @@ export default function MergedComponent() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative w-screen min-h-[40rem] flex items-center justify-center bg-cover bg-center snap-start" style={{ backgroundImage: "url('https://images.livemint.com/img/2020/01/10/1600x900/a25627b8-3056-11ea-abf9-d6598481f54e_1578651806065_1578651853959.jpg')" }}>
+      <div className="relative w-screen min-h-[44rem] flex items-center justify-center bg-cover bg-center snap-start" style={{ backgroundImage: "url('https://images.livemint.com/img/2020/01/10/1600x900/a25627b8-3056-11ea-abf9-d6598481f54e_1578651806065_1578651853959.jpg')" }}>
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 text-white text-center max-w-md px-5 mt-20">
           <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
