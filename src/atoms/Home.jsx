@@ -73,7 +73,7 @@ export default function MergedComponent() {
   initial={{ x: -100, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}
   transition={{ duration: 0.8 }}
-  className="absolute flex flex-col bottom-4 left-1 text-white px-2 py-3 w-full md:w-96 max-w-[99%] bg-black/40 rounded-lg backdrop-blur-sm"
+  className="absolute flex flex-col bottom-4 left-2 text-white px-2 py-3 w-full md:w-96 max-w-[98%] bg-black/40 rounded-lg backdrop-blur-sm"
 >
   {/* Mobile View */}
   <div className=" min-w-screen">
@@ -114,7 +114,7 @@ export default function MergedComponent() {
 
 
       {/* Features Section */}
-      <div className="w-screen flex flex-col items-center justify-center bg-white px-6 mt-12 snap-start min-h-[40rem]">
+      <div className="w-screen flex flex-col items-center justify-center bg-white px-6 mt-12 snap-start min-h-[42rem]">
         <div className="flex justify-center w-full mb-4">
           <h2 className="text-2xl font-bold text-green-600 text-center">Let's Get Stronger Together</h2>
         </div>
@@ -161,9 +161,10 @@ export default function MergedComponent() {
       </div>
 
       {/* Infrastructure Section */}
-      <div className="relative mx-auto flex flex-col items-center py-8 overflow-hidden snap-start">
+      <div className="relative mx-auto flex flex-col items-center py-8 overflow-hidden min-h-[36rem] snap-start">
         <h2 className="text-3xl font-bold text-green-600 mt-2 text-center">Infrastructure Services</h2>
-        <div className="flex flex-col md:flex-row w-full justify-center items-center gap-8">
+        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-8 w-full">
+
           {Object.keys(sportsData).map((sport) => (
             <button
               key={sport}
