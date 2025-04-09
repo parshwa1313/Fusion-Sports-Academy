@@ -82,7 +82,7 @@ const Gallery = () => {
     <div className="relative w-full bg-gray-50 min-h-screen">
       <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
         <img
-          src="https://www.goteambot.com/wp-content/uploads/elementor/thumbs/sports-equipment-7T64RVL-p51pysoivenya95vn27097t3u83umj7c1vdcrstrig.jpg"
+          src="https://sportsmatik.com/uploads/sports-corner/equipment-bn.jpg"
           alt="Tennis Club"
           className="w-full h-full object-cover"
         />

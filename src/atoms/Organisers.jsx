@@ -90,7 +90,7 @@ export default function EventOrganiserGrid() {
       {/* Banner */}
       <div className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] overflow-hidden">
         <img
-          src="https://www.reliancegeneral.co.in/siteassets/rgiclassets/images/blogs-images/personal-accident-insurance-for-sports-enthusiasts2.webp"
+          src="https://sportscafe.in/img/es3/articles/cricket/BCCI-Meeting.jpg"
           alt="Event Organisers"
           className="w-full h-full object-cover"
         />

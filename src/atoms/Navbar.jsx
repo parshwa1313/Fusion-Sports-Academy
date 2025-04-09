@@ -19,32 +19,43 @@ export default function Header() {
   const location = useLocation();
 
   return (
-    <header className="bg-white shadow-md fixed w-full top-0 z-50">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+    <header className="bg-white  fixed w-full top-0 z-50">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-24">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <Link to="/">
-            <img
-              src="https://fusiononline.fusion-lifestyle.com/sportingacademy/images/logos-icons/fusion-sporting-academy-logo.svg"
-              alt="Logo"
-              className="h-14 w-20 sm:h-16 sm:w-24 md:h-20 md:w-28 lg:h-24 lg:w-32 object-contain"
-            />
-          </Link>
-        </div>
+  {/* Mobile View */}
+  <Link to="/" className="block sm:hidden">
+    <img
+      src="https://mma.prnewswire.com/media/1658625/Fusion_Sport_Logo.jpg?p=twitter"
+      alt="Logo"
+      className="h-20 w-28 object-contain p-1"
+    />
+  </Link>
+
+  {/* Desktop View */}
+  <Link to="/" className="hidden sm:block">
+    <img
+      src="https://mma.prnewswire.com/media/1658625/Fusion_Sport_Logo.jpg?p=twitter"
+      alt="Logo"
+      className="h-20 w-32 lg:h-24 lg:w-36 object-contain p-1"
+    />
+  </Link>
+</div>
+
 
         {/* Desktop Nav Links */}
        
-        <div className="hidden md:flex items-center space-x-24"> {/* Added space-x-16 here */}
+        <div className="hidden xl:flex items-center space-x-16"> {/* Added space-x-16 here */}
           {/* Desktop Nav Links */}
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-7">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-md sm:text-lg font-medium relative transition-all duration-300 ${
+                className={`text-lg sm:text-lg  font-semibold relative transition-all duration-300 ${
                   location.pathname === link.path
                     ? "text-green-500"
-                    : "text-gray-800 hover:text-green-500"
+                    : "text-gray-700 hover:text-green-500"
                 }`}
               >
                 {link.name}
@@ -70,7 +81,7 @@ export default function Header() {
        
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-800 focus:outline-none"
+          className="xl:hidden text-gray-700  focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -83,7 +94,7 @@ export default function Header() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-white border-t shadow-md absolute w-full left-0 top-full"
+          className="xl:hidden bg-white border-t shadow-md absolute w-full left-0 top-full"
         >
           <nav className="flex flex-col p-6 space-y-4">
             {navLinks.map((link) => (

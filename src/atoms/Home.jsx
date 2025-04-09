@@ -56,53 +56,69 @@ export default function MergedComponent() {
 
       {/* Slider Section */}
       <div className="w-screen h-screen snap-start relative flex items-center justify-center overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={images[index]}
-            src={images[index]}
-            alt="Slider img"
-            className="w-full h-full object-cover absolute"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-          />
-        </AnimatePresence>
+  <AnimatePresence mode="wait">
+    <motion.img
+      key={images[index]}
+      src={images[index]}
+      alt="Slider img"
+      className="w-full h-full object-cover absolute"
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.5 }}
+    />
+  </AnimatePresence>
 
-        <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="absolute flex-col flex bottom-4 left-4 text-white px-3 py-4 w-96 max-w-[80%] bg-black/40 rounded-lg backdrop-blur-sm"
-        >
-          <h1 className="text-xl font-bold bg-green-600 px-3 py-1 inline-block">Let’s Learn, Compete, Conquer</h1>
-          <h2 className="text-xl font-bold bg-green-600 px-3 py-1 inline-block mt-1">Let’s Get Stronger Together</h2>
-          <ul className="mt-2 space-y-2 text-md font-medium leading-snug">
-            <li>➤ STATE-OF-THE-ART FACILITIES FOR OPTIMAL TRAINING EXPERIENCE.</li>
-            <li>➤ DIVERSE SPORTS UNDER ONE ROOF.</li>
-            <li>➤ EMPHASIS ON SKILL DEVELOPMENT, TACTICAL DEVELOPMENT, AND MENTAL DEVELOPMENT.</li>
-          </ul>
-          <Link to="/details">
-            <button className="mt-4 bg-green-600 text-white px-5 py-2 rounded-md font-bold hover:bg-green-700 transition">
-              RESERVE A COURT
-            </button>
-          </Link>
-        </motion.div>
+  <motion.div
+  initial={{ x: -100, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.8 }}
+  className="absolute flex flex-col bottom-4 left-1 text-white px-2 py-3 w-full md:w-96 max-w-[99%] bg-black/40 rounded-lg backdrop-blur-sm"
+>
+  {/* Mobile View */}
+  <div className=" min-w-screen">
+    <h1 className="text-lg sm:text-2xl font-bold  inline-block">"Let’s Learn, Compete, Conquer"</h1>
+    <h2 className="text-lg sm:text-2xl font-bold  inline-block mt-1">"Let’s Get Stronger Together</h2>
+    <ul className="mt-2 space-y-2 text-sm sm:text-md text-black font-medium leading-snug">
+      <li>➤ STATE-OF-THE-ART FACILITIES FOR OPTIMAL TRAINING EXPERIENCE.</li>
+      <li>➤ DIVERSE SPORTS UNDER ONE ROOF.</li>
+      <li>➤ EMPHASIS ON SKILL DEVELOPMENT, TACTICAL DEVELOPMENT, AND MENTAL DEVELOPMENT.</li>
+    </ul>
+    <Link to="/details">
+      <button className="mt-4  border-2 hover:text-white text-green-600 px-5 py-2 rounded-md font-bold hover:bg-green-700 transition">
+        RESERVE A COURT
+      </button>
+    </Link>
+  </div>
 
-        <button onClick={prevSlide} className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-opacity-70">
-          <ChevronLeft size={32} />
-        </button>
-        <button onClick={nextSlide} className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-opacity-70">
-          <ChevronRight size={32} />
-        </button>
-      </div>
+  {/* Desktop View */}
+ 
+</motion.div>
+
+
+
+
+  <button
+    onClick={prevSlide}
+    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-opacity-70 sm:left-8 sm:p-4"
+  >
+    <ChevronLeft size={32} />
+  </button>
+  <button
+    onClick={nextSlide}
+    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-opacity-70 sm:right-8 sm:p-4"
+  >
+    <ChevronRight size={32} />
+  </button>
+</div>
+
 
       {/* Features Section */}
       <div className="w-screen flex flex-col items-center justify-center bg-white px-6 mt-12 snap-start min-h-[40rem]">
-      <div className="flex justify-center w-full mb-4">
+        <div className="flex justify-center w-full mb-4">
           <h2 className="text-2xl font-bold text-green-600 text-center">Let's Get Stronger Together</h2>
         </div>
-        <div className="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4  mb-16 justify-items-center ">
+        <div className="max-w-6xl w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-4 mb-16 justify-items-center">
           {features.map((feature, index) => (
             <Link to={feature.link} key={index} className="w-full">
               <motion.div
@@ -119,7 +135,6 @@ export default function MergedComponent() {
             </Link>
           ))}
         </div>
-       
       </div>
 
       {/* Hero Section */}
@@ -146,14 +161,14 @@ export default function MergedComponent() {
       </div>
 
       {/* Infrastructure Section */}
-      <div className="relative mx-auto flex flex-col items-center py-8  overflow-hidden snap-start">
+      <div className="relative mx-auto flex flex-col items-center py-8 overflow-hidden snap-start">
         <h2 className="text-3xl font-bold text-green-600 mt-2 text-center">Infrastructure Services</h2>
-        <div className="flex flex-col md:flex-row  mt-2 w-full justify-center items-center gap-8">
+        <div className="flex flex-col md:flex-row w-full justify-center items-center gap-8">
           {Object.keys(sportsData).map((sport) => (
             <button
               key={sport}
               onClick={() => setSelectedSport(sport)}
-              className={`transition-colors duration-200 py-2 rounded-md text-xl  font-semibold focus:outline-none ${
+              className={`transition-colors duration-200 py-2 rounded-md text-xl font-semibold focus:outline-none ${
                 selectedSport === sport ? "text-green-600" : "text-black"
               }`}
             >
