@@ -31,7 +31,7 @@ import Headlines from './atoms/Headlines';
 import Interview from './atoms/Interview';
 import Camp from './atoms/Camp';
 import Privacy from './atoms/privacy';
-import Terms from './atoms/terms';
+import Terms from './atoms/Terms';
 import CommunityGrid from './atoms/Community';
 import Academies from './atoms/Academies';
 import MixedGroundGrid from './atoms/Grounds';
