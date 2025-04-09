@@ -27,7 +27,7 @@ export default function Header() {
             <img
               src="https://fusiononline.fusion-lifestyle.com/sportingacademy/images/logos-icons/fusion-sporting-academy-logo.svg"
               alt="Logo"
-              className="h-14 w-20 sm:h-16 sm:w-20 object-fit"
+              className="h-14 w-20 sm:h-16 sm:w-24 md:h-20 md:w-28 lg:h-24 lg:w-32 object-contain"
             />
           </Link>
         </div>
