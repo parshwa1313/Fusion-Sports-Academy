@@ -73,7 +73,7 @@ export default function MergedComponent() {
   initial={{ x: -100, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}
   transition={{ duration: 0.8 }}
-  className="absolute flex flex-col bottom-4 left-1 text-white px-2 py-3 w-full md:w-96 max-w-[98%] bg-black/40 rounded-lg backdrop-blur-sm"
+  className="absolute flex flex-col bottom-6 left-1 text-white px-2 py-3 w-full md:w-96 max-w-[98%] bg-black/50 rounded-lg backdrop-blur-sm"
 >
   {/* Mobile View */}
   <div className=" min-w-screen">
@@ -114,11 +114,11 @@ export default function MergedComponent() {
 
 
       {/* Features Section */}
-      <div className="w-screen flex flex-col items-center justify-center bg-white px-6 mt-12 snap-start min-h-[42rem]">
-        <div className="flex justify-center w-full mb-4">
-          <h2 className="text-2xl font-bold text-green-600 text-center">Let's Get Stronger Together</h2>
+      <div className="w-screen flex flex-col items-center justify-center bg-white px-6 mt-6 snap-start min-h-[42rem]">
+        <div className="flex justify-center w-full">
+          <h2 className="text-4xl font-bold text-green-600 text-center mb-36">Let's Get Stronger Together</h2>
         </div>
-        <div className="max-w-6xl w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-4 mb-16 justify-items-center">
+        <div className="max-w-6xl w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-4  justify-items-center">
           {features.map((feature, index) => (
             <Link to={feature.link} key={index} className="w-full">
               <motion.div
@@ -162,7 +162,7 @@ export default function MergedComponent() {
 
       {/* Infrastructure Section */}
       <div className="relative mx-auto flex flex-col items-center py-8 overflow-hidden min-h-[34rem] snap-start">
-        <h2 className="text-3xl font-bold text-green-600 mt-4 text-center">Infrastructure Services</h2>
+        <h2 className="text-3xl font-bold text-green-600 mt-3 text-center">Infrastructure Services</h2>
         <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-8 w-full">
 
           {Object.keys(sportsData).map((sport) => (
@@ -181,7 +181,7 @@ export default function MergedComponent() {
           key={selectedSport}
           src={sportsData[selectedSport]}
           alt={selectedSport}
-          className="w-full md:w-3/4 lg:w-2/3 max-h-[28rem] rounded-lg shadow-lg object-cover mt-4 "
+          className="w-full md:w-3/4 lg:w-2/3 max-h-[28rem] rounded-lg shadow-lg object-cover mt-2 "
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
@@ -189,7 +189,7 @@ export default function MergedComponent() {
         />
         <div className="text-center mt-6 px-4">
           <h3 className="text-2xl font-bold">{selectedSport}</h3>
-          <p className="text-lg font-serif max-w-xl mx-auto mt-2">
+          <p className="text-lg font-serif max-w-xl mx-auto">
             Experience world-class {selectedSport} courts built for performance and safety.
           </p>
         </div>
