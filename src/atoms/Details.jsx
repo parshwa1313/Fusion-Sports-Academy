@@ -45,7 +45,7 @@ const BookingComponent = () => {
     payment: "",
     hours: 1,
     image: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/095/583/original/tennis.png?1693738260",
-    address: "Neon Science City",
+    address: "Fusion Science City",
   });
 
   const [showPopup, setShowPopup] = useState(false);
@@ -81,7 +81,7 @@ const BookingComponent = () => {
     <div className="h-screen p-4 md:p-8 lg:p-12 ">
       {step === "select" ? (
         <div className="max-w-5xl mx-auto bg-white p-6 mt-6 min-h-[40rem]">
-          <h2 className="text-3xl font-bold text-center text-green-600 mb-4 mt-6">
+          <h2 className="text-3xl font-bold text-center text-green-600 mb-4 mt-8">
             Select Your Session
           </h2>
 
