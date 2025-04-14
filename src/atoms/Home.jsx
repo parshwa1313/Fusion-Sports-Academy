@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import Testimonials from "./Testimonials";
 
 const images = [
   "https://www.mouratoglou.com/wp-content/uploads/2024/11/11dd1227-f3e1-4903-8755-cdbeeea0d97b-JUL01675.jpg",
@@ -193,7 +194,9 @@ export default function MergedComponent() {
             Experience world-class {selectedSport} courts built for performance and safety.
           </p>
         </div>
+        
       </div>
+      <Testimonials />
     </div>
   );
 }

@@ -39,6 +39,7 @@ import EventOrganiserGrid from './atoms/Organisers';
 import CommentatorGrid from './atoms/Commentators';
 import RefereeGrid from './atoms/Referees';
 import TrainerGrid from './atoms/Trainers';
+import Testimonials from './atoms/Testimonials';
 
 function AppWrapper() {
   const location = useLocation();
@@ -84,6 +85,7 @@ function AppWrapper() {
         <Route path='/commentators' element={<CommentatorGrid />} />
         <Route path='/referees' element={<RefereeGrid />} />
         <Route path='/trainers' element={<TrainerGrid />} />
+        <Route path='/testimonials' element={<Testimonials />} />
       </Routes>
       {!hideFooterRoutes.includes(location.pathname) && <Footer />}
       

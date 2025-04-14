@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
+
 const SportsClub = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -177,7 +178,7 @@ const SportsClub = () => {
             </div>
           </motion.div>
         </div>
-        <div className="flex flex-col min-h-[41rem] items-center bg-white justify-center px-4 py-10 md:px-10 lg:px-20">
+        <div className="flex flex-col min-h-[41rem] items-center  justify-center px-4 py-10 md:px-10 lg:px-20">
       <h2 className="text-2xl md:text-3xl text-green-500 font-bold text-center mb-6">Our Approach</h2>
       <div className="flex flex-col md:flex-row items-center justify-center gap-10 mt-2">
         {/* Left Content */}
@@ -197,7 +198,7 @@ const SportsClub = () => {
         
         {/* Center Image */}
         <div className="w-full max-w-sm md:max-w-lg flex justify-center">
-          <img src="https://previews.123rf.com/images/urfandadashov/urfandadashov1805/urfandadashov180500040/100957940-proactive-icon-isolated-on-white-background-vector-illustration.jpg" alt="Our Approach" className="w-full h-96 object-cover bg-gray-100" />
+          <img src="https://as2.ftcdn.net/jpg/05/19/60/67/1000_F_519606758_seMOhkHAryYGZgPTcXPcNJokUMUvK5TR.jpg" alt="Our Approach" className="w-full  object-cover " />
         </div>
         
         {/* Right Content */}
@@ -208,6 +209,7 @@ const SportsClub = () => {
         </ul>
       </div>
     </div>
+   
       </div>
     </section>
   );
