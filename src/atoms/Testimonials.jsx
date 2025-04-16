@@ -36,7 +36,7 @@ const testimonials = [
         "https://t3.ftcdn.net/jpg/02/20/98/16/360_F_220981696_WDxow3nElyH1Ny84PuMAOFuXCWiXT69q.jpg",
     },
     {
-      name: "Dev Rana",
+      name: "Anicka Sharma",
       text: "Hands down the best football training ground in town. Excellent drills, great guidance, and a very motivating team vibe. Love it!",
       image:
         "https://images.pexels.com/photos/29351977/pexels-photo-29351977/free-photo-of-elegant-bride-in-traditional-indian-attire.jpeg?auto=compress&cs=tinysrgb&w=600",

@@ -189,7 +189,7 @@ const BookingComponent = () => {
             </motion.div>
           </div>
 
-          <div className="w-full lg:w-1/2 p-4 ">
+          <div className="w-full lg:w-1/2 p-4 mt-12">
             <h2 className="text-xl font-bold mb-4">Your Details:</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input type="text" placeholder="Name *" className="p-2  border-2  rounded" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />

@@ -74,26 +74,22 @@ export default function MergedComponent() {
   initial={{ x: -100, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}
   transition={{ duration: 0.8 }}
-  className="absolute flex flex-col bottom-6 left-1 text-white px-2 py-3 w-full md:w-96 max-w-[98%] bg-black/50 rounded-lg backdrop-blur-sm"
+  className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4"
 >
-  {/* Mobile View */}
-  <div className=" min-w-screen">
-    <h1 className="text-lg sm:text-2xl font-bold  inline-block">"Let’s Learn, Compete, Conquer"</h1>
-    <h2 className="text-lg sm:text-2xl font-bold  inline-block mt-1">"Let’s Get Stronger Together</h2>
-    <ul className="mt-2 space-y-2 text-sm sm:text-md text-black font-medium leading-snug">
-      <li>➤ STATE-OF-THE-ART FACILITIES FOR OPTIMAL TRAINING EXPERIENCE.</li>
-      <li>➤ DIVERSE SPORTS UNDER ONE ROOF.</li>
-      <li>➤ EMPHASIS ON SKILL DEVELOPMENT, TACTICAL DEVELOPMENT, AND MENTAL DEVELOPMENT.</li>
+  <div className="max-w-[90%]">
+    <h1 className="text-lg sm:text-3xl text-green-600 font-bold">"Let’s Learn, Compete, Conquer"</h1>
+    <h2 className="text-lg sm:text-3xl font-bold mt-2">"Let’s Get Stronger Together"</h2>
+    <ul className="mt-4  text-sm sm:text-lg font-serif leading-snug">
+      <li>➤ STATE-OF-THE-ART FACILITIES FOR OPTIMAL TRAINING EXPERIENCE. DIVERSE SPORTS UNDER ONE ROOF. </li>
+     
+      <li>EMPHASIS ON SKILL DEVELOPMENT, TACTICAL DEVELOPMENT, AND MENTAL DEVELOPMENT.</li>
     </ul>
     <Link to="/details">
-      <button className="mt-4  border-2 hover:text-white text-green-600 px-5 py-2 rounded-md font-bold hover:bg-green-700 transition">
+      <button className="mt-5 border-2 hover:text-white text-green-600 px-5 py-2 rounded-md font-bold hover:bg-green-700 transition">
         RESERVE A COURT
       </button>
     </Link>
   </div>
-
-  {/* Desktop View */}
- 
 </motion.div>
 
 
