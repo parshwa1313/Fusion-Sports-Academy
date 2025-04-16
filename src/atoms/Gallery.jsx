@@ -7,6 +7,16 @@ const Gallery = () => {
   }, []);
 
   const allImages = {
+    Badminton: [
+      "https://images.news18.com/ibnlive/uploads/2025/02/Badminton-Asia-Mixed-Team-Championships_Dhruv-Kapila-and-Tanisha-Crasto-2025-02-caa017b14f3ae1896227b5e437df121e-16x9.png?impolicy=website&width=640&height=360",
+      "https://www.indiantelevision.com/sites/default/files/styles/smartcrop_800x800/public/images/tv-images/2024/01/08/Unnati-Hooda.jpg?itok=1t9zI8yI",
+      "https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYTE2YTU4YzcwLTZkODktMTFlZi04OTQ0LWNmNDg1NzhjZjk4Ny5qcGc=",
+      "https://www.hindustantimes.com/ht-img/img/2025/03/15/550x309/Indian-badminton-player-Lakshya-Sen---Hindustan-Ti_1742011972666_1742011985100.jpg",
+      "https://www.ppba.in/images/ppba-thailand-03.jpg",
+      "https://im.indiatimes.in/content/2017/Mar/797e743e-d574-42a1-becf-0a8c29773252_1489319211.jpg?w=640&h=427&cc=1&webp=1&q=75",
+      "https://thebridge.in/h-upload/2022/03/28/25440-ajay.webp",
+      "https://sc0.blr1.cdn.digitaloceanspaces.com/article/198578-dedpykhkxk-1708311742.jpeg"
+    ],
     Cricket: [
       "https://assets.telegraphindia.com/telegraph/2022/Mar/1647082297_cap1.jpg",
       "https://www.cricinfo360.com/wp-content/uploads/2024/11/cricket-coaching-in-tamil-nadu.jpeg",
@@ -27,16 +37,7 @@ const Gallery = () => {
       "https://cdn.shopify.com/s/files/1/0014/3789/2697/files/Boca_Juniors_Football_School_-_Best_Football_Academy_in_India_grande.jpg?v=1591047763",
       "https://rfcfootballacademy.in/assets/img/rfc_girls/rfc_girls_01.jpg"
     ],
-    Badminton: [
-      "https://images.news18.com/ibnlive/uploads/2025/02/Badminton-Asia-Mixed-Team-Championships_Dhruv-Kapila-and-Tanisha-Crasto-2025-02-caa017b14f3ae1896227b5e437df121e-16x9.png?impolicy=website&width=640&height=360",
-      "https://www.indiantelevision.com/sites/default/files/styles/smartcrop_800x800/public/images/tv-images/2024/01/08/Unnati-Hooda.jpg?itok=1t9zI8yI",
-      "https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYTE2YTU4YzcwLTZkODktMTFlZi04OTQ0LWNmNDg1NzhjZjk4Ny5qcGc=",
-      "https://www.hindustantimes.com/ht-img/img/2025/03/15/550x309/Indian-badminton-player-Lakshya-Sen---Hindustan-Ti_1742011972666_1742011985100.jpg",
-      "https://www.ppba.in/images/ppba-thailand-03.jpg",
-      "https://im.indiatimes.in/content/2017/Mar/797e743e-d574-42a1-becf-0a8c29773252_1489319211.jpg?w=640&h=427&cc=1&webp=1&q=75",
-      "https://thebridge.in/h-upload/2022/03/28/25440-ajay.webp",
-      "https://sc0.blr1.cdn.digitaloceanspaces.com/article/198578-dedpykhkxk-1708311742.jpeg"
-    ],
+  
     Tennis: [
       "https://plus.unsplash.com/premium_photo-1707486516761-0e2516920755?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://www.tennisnerd.net/wp-content/uploads/2021/08/Untitled-1-2.jpg",

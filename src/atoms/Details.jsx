@@ -16,7 +16,13 @@ const BookingComponent = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
-  const times = ["9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm"];
+  const times = [
+    "12:00 am", "1:00 am", "2:00 am", "3:00 am", "4:00 am", "5:00 am",
+    "6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am",
+    "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm",
+    "6:00 pm", "7:00 pm", "8:00 pm", "9:00 pm", "10:00 pm", "11:00 pm"
+  ];
+  
   const getDaysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
   const handleMonthChange = (direction) => {
     const newMonth = currentMonth + direction;
@@ -80,8 +86,8 @@ const BookingComponent = () => {
   return (
     <div className="h-screen p-4 md:p-8 lg:p-12 ">
       {step === "select" ? (
-        <div className="max-w-5xl mx-auto bg-white p-6 mt-6 min-h-[40rem]">
-          <h2 className="text-3xl font-bold text-center text-green-600 mb-4 mt-8">
+        <div className="max-w-5xl mx-auto bg-white p-6 mt-6 max-h-[37rem]">
+          <h2 className="text-3xl font-bold text-center text-green-600 mb-4 mt-4">
             Select Your Session
           </h2>
 
@@ -112,50 +118,58 @@ const BookingComponent = () => {
             </motion.div>
 
             <div className="bg-green-600 text-white p-4 rounded-lg w-full shadow-lg">
-              <div className="flex justify-between items-center mb-4  gap-2">
-                <button onClick={() => handleMonthChange(-1)} className="px-3 py-1 bg-white text-green-600 rounded-md">Prev</button>
-                <h2 className="text-lg font-bold text-center w-full md:w-auto">
-                  {formattedMonth} {currentYear}
-                </h2>
-                <button onClick={() => handleMonthChange(1)} className="px-3 py-1 bg-white text-green-600 rounded-md">Next</button>
-              </div>
+  <div className="flex justify-between items-center mb-4 gap-2">
+    <button onClick={() => handleMonthChange(-1)} className="px-3 py-1 bg-white text-green-600 rounded-md">Prev</button>
+    <h2 className="text-lg font-bold text-center w-full md:w-auto">
+      {formattedMonth} {currentYear}
+    </h2>
+    <button onClick={() => handleMonthChange(1)} className="px-3 py-1 bg-white text-green-600 rounded-md">Next</button>
+  </div>
 
-              {/* Days Grid Rendering */}
-<div className="grid grid-cols-7 gap-2 mt-2">
-  {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-    <div key={day} className="text-center font-semibold text-sm md:text-base">
-      {day}
-    </div>
-  ))}
-
-  {[...Array(firstDayOfMonth)].map((_, index) => (
-    <div key={`empty-${index}`}></div>
-  ))}
-
-  {Array.from({ length: getDaysInMonth(currentMonth, currentYear) }).map((_, i) => {
-    const day = i + 1;
-    return (
-      <button
-        key={day}
-        onClick={() => setSelectedDate(new Date(currentYear, currentMonth, day))}
-        className={`p-2 rounded-md text-sm md:text-base  ${
-          selectedDate.getDate() === day &&
-          selectedDate.getMonth() === currentMonth &&
-          selectedDate.getFullYear() === currentYear
-            ? "bg-white text-green-600"
-            : "bg-green-700 text-white hover:bg-green-500"
-        }`}
-      >
+  {/* Days Header */}
+  <div className="grid grid-cols-7 gap-2 mt-2">
+    {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+      <div key={day} className="text-center font-semibold text-sm md:text-base">
         {day}
-      </button>
-    );
-  })}
+      </div>
+    ))}
+
+   
+
+    {Array.from({ length: getDaysInMonth(currentMonth, currentYear) }).map((_, i) => {
+      const day = i + 1;
+      const dateObj = new Date(currentYear, currentMonth, day);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0); // Clear time for comparison
+      const isPast = dateObj < today;
+      const isToday = dateObj.getTime() === today.getTime();
+      const isSelected =
+        selectedDate.getDate() === day &&
+        selectedDate.getMonth() === currentMonth &&
+        selectedDate.getFullYear() === currentYear;
+
+      return (
+        <button
+          key={day}
+          onClick={() => !isPast && setSelectedDate(dateObj)}
+          disabled={isPast}
+          className={`p-2 rounded-md text-sm md:text-base transition-colors duration-200 ${
+            isSelected ? "bg-white text-green-600" :
+             
+            isPast ? "bg-green-900 text-gray-400 cursor-not-allowed" :
+            "bg-green-700 text-white hover:bg-green-500"
+          }`}
+        >
+          {day}
+        </button>
+      );
+    })}
+  </div>
 </div>
 
-            </div>
           </div>
 
-          <div className="mt-4 flex flex-wrap justify-center gap-3 w-full">
+          <div className=" flex flex-wrap justify-center gap-3 w-full">
             <h3 className="font-semibold text-xl text-center w-full">Select Time:</h3>
             {times.map((time) => (
               <button
