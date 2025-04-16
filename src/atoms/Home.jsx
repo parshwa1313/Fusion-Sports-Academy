@@ -74,23 +74,48 @@ export default function MergedComponent() {
   initial={{ x: -100, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}
   transition={{ duration: 0.8 }}
-  className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4"
+  className="absolute inset-0 flex items-center justify-center text-center"
 >
-  <div className="max-w-[90%]">
-    <h1 className="text-lg sm:text-3xl text-green-600 font-bold">"Let’s Learn, Compete, Conquer"</h1>
-    <h2 className="text-lg sm:text-3xl font-bold mt-2">"Let’s Get Stronger Together"</h2>
-    <ul className="mt-4  text-sm sm:text-lg font-serif leading-snug">
-      <li>➤ STATE-OF-THE-ART FACILITIES FOR OPTIMAL TRAINING EXPERIENCE. DIVERSE SPORTS UNDER ONE ROOF. </li>
-     
-      <li>EMPHASIS ON SKILL DEVELOPMENT, TACTICAL DEVELOPMENT, AND MENTAL DEVELOPMENT.</li>
-    </ul>
-    <Link to="/details">
-      <button className="mt-5 border-2 hover:text-white text-green-600 px-5 py-2 rounded-md font-bold hover:bg-green-700 transition">
-        RESERVE A COURT
-      </button>
-    </Link>
+<div className="absolute inset-0 flex items-center justify-center px-6 mt-20">
+  <div className="uppercase font-extrabold text-white text-3xl sm:text-3xl w-full max-w-[600px] text-left space-y-1">
+    
+    {/* Line 1: LET'S LEARN */}
+    <div
+      className=" transform -skew-x-[12deg] bg-[#5BC34D] inline-block px-4 py-2"
+    >
+      <div className="transform skew-x-[12deg]">LET’S LEARN COMPETE & CONQUER</div>
+    </div>
+
+    {/* Line 2: COMPETE CONQUER */}
+    <div
+      className="origin-left transform -skew-x-[12deg] text-[#12A146] bg-white inline-block px-3 py-2"
+    >
+      <div className="transform skew-x-[12deg]">Let’s Get Stronger Together</div>
+    </div>
+    
+    <ul class="mt-2 text-xs sm:text-lg font-semibold leading-snug bg-black/50 p-2">
+  <li class="mt-2">➤ STATE-OF-THE-ART FACILITIES FOR OPTIMAL TRAINING EXPERIENCE.</li>
+  <li class="mt-2">➤ EMPHASIS ON SKILL DEVELOPMENT, TACTICAL DEVELOPMENT, AND MENTAL DEVELOPMENT.</li>
+  <li class="mt-2">➤ INDIVIDUALIZED TRAINING PLANS TO HELP YOU REACH YOUR FULL POTENTIAL.</li>
+</ul>
+
+    <div class="mt-4 text-center flex items-center mx-auto justify-center">
+    <Link
+              to="/details"
+              className="bg-green-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-green-600 text-sm sm:text-base"
+            >
+              RESERVE A COURT
+            </Link>
+            </div>
   </div>
+</div>
+
+
+
+
+
 </motion.div>
+
 
 
 
