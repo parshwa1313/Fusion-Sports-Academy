@@ -88,27 +88,32 @@ export default function Foundation() {
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="relative w-full max-w-7xl px-6 sm:px-12 lg:px-20 py-8 space-y-12">
         {/* Header with Back Arrow */}
-        <h2 className="text-4xl font-bold text-center text-yellow-400 mt-16 flex items-center gap-2 cursor-pointer" onClick={() => navigate(-1)}>
-          <div className="icon-container">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-yellow-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </div>
-          <div className="text-container text-center flex items-center mx-auto">
-            Foundation Development Program
-          </div>
-        </h2>
+        <div className="relative">
+  {/* Back Arrow in Top-Left Corner */}
+  <div
+    className="absolute  cursor-pointer"
+    onClick={() => navigate(-1)}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-10 w-10 text-yellow-400 hover:text-yellow-300 transition"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+  </div>
+
+  {/* Title in Center */}
+  <div className="mt-16 text-center">
+    <h2 className="text-4xl font-bold text-yellow-400">
+      Foundation Development Program
+    </h2>
+  </div>
+</div>
+
 
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
           {/* Registration Form */}

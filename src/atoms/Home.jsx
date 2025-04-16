@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+
 import { Link } from "react-router-dom";
 import Testimonials from "./Testimonials";
 
@@ -53,86 +58,66 @@ export default function MergedComponent() {
   const prevSlide = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="relative w-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth">
+    <div className="relative w-screen  snap-y snap-mandatory overflow-y-scroll scroll-smooth">
 
       {/* Slider Section */}
-      <div className="w-screen h-screen snap-start relative flex items-center justify-center overflow-hidden">
-  <AnimatePresence mode="wait">
-    <motion.img
-      key={images[index]}
-      src={images[index]}
-      alt="Slider img"
-      className="w-full h-full object-cover absolute"
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      transition={{ duration: 0.5 }}
-    />
-  </AnimatePresence>
+{/* Slider Section */}
+<div className="w-screen h-screen snap-start relative flex items-center justify-center overflow-hidden">
+  <Swiper
+    modules={[Autoplay, EffectFade]}
+    autoplay={{ delay: 3000, disableOnInteraction: false }}
+    effect="fade"
+    loop={true}
+    className="absolute inset-0 z-0 w-full h-full"
+  >
+    {images.map((img, idx) => (
+      <SwiperSlide key={idx}>
+        <img
+          src={img}
+          alt={`Slide ${idx}`}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-60 z-10" />
+      </SwiperSlide>
+    ))}
+  </Swiper>
 
-  <motion.div
-  initial={{ x: -100, opacity: 0 }}
-  animate={{ x: 0, opacity: 1 }}
-  transition={{ duration: 0.8 }}
-  className="absolute inset-0 flex items-center justify-center text-center"
->
-<div className="absolute inset-0 flex items-center justify-center px-6 mt-20">
-  <div className="uppercase font-extrabold text-white text-3xl sm:text-3xl w-full max-w-[600px] text-left space-y-1">
-    
-    {/* Line 1: LET'S LEARN */}
-    <div
-      className=" transform -skew-x-[12deg] bg-[#5BC34D] inline-block px-4 py-2"
-    >
-      <div className="transform skew-x-[12deg]">LET’S LEARN COMPETE & CONQUER</div>
+  {/* Text Content */}
+  <div className="absolute inset-0 z-20 flex items-center justify-center text-center">
+    <div className="absolute inset-0 flex items-center justify-center px-6 mt-20">
+      <div className="uppercase text-white text-3xl sm:text-3xl w-full max-w-[600px] text-left space-y-1">
+        <div className="transform -skew-x-[12deg] bg-[#5BC34D] inline-block px-4 py-2">
+          <div className="transform skew-x-[12deg]">
+            LET’S LEARN COMPETE & CONQUER
+          </div>
+        </div>
+
+        <div className="origin-left transform -skew-x-[12deg] text-[#12A146] bg-white inline-block px-3 py-2">
+          <div className="transform skew-x-[12deg]">
+            Let’s Get Stronger Together
+          </div>
+        </div>
+
+        <ul className=" text-xs text-left sm:text-sm md:text-base lg:text-md font-semibold leading-snug">
+          <li className="mt-2 pr-8 transform -skew-x-[12deg]">
+            Train in top-tier facilities with expert-guided skill, tactical, and mental development all tailored to unlock your full potential.
+          </li>
+        </ul>
+
+        <div className="transform -skew-x-[10deg]">
+          <Link
+            to="/details"
+            className="bg-[#5BC34D] text-white px-6 py-2 rounded-sm shadow-md hover:bg-white/30 hover:text-[#5BC34D] hover:shadow-lg hover:border-[#5BC34D] border-2 text-md sm:text-base mt-2"
+          >
+            RESERVE A COURT
+          </Link>
+        </div>
+      </div>
     </div>
-
-    {/* Line 2: COMPETE CONQUER */}
-    <div
-      className="origin-left transform -skew-x-[12deg] text-[#12A146] bg-white inline-block px-3 py-2"
-    >
-      <div className="transform skew-x-[12deg]">Let’s Get Stronger Together</div>
-    </div>
-    
-    <ul class="mt-2 text-xs sm:text-lg font-semibold leading-snug bg-black/50 p-2">
-  <li class="mt-2">➤ STATE-OF-THE-ART FACILITIES FOR OPTIMAL TRAINING EXPERIENCE.</li>
-  <li class="mt-2">➤ EMPHASIS ON SKILL DEVELOPMENT, TACTICAL DEVELOPMENT, AND MENTAL DEVELOPMENT.</li>
-  <li class="mt-2">➤ INDIVIDUALIZED TRAINING PLANS TO HELP YOU REACH YOUR FULL POTENTIAL.</li>
-</ul>
-
-    <div class="mt-4 text-center flex items-center mx-auto justify-center">
-    <Link
-              to="/details"
-              className="bg-green-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-green-600 text-sm sm:text-base"
-            >
-              RESERVE A COURT
-            </Link>
-            </div>
   </div>
 </div>
 
 
-
-
-
-</motion.div>
-
-
-
-
-
-  <button
-    onClick={prevSlide}
-    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-opacity-70 sm:left-8 sm:p-4"
-  >
-    <ChevronLeft size={32} />
-  </button>
-  <button
-    onClick={nextSlide}
-    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-opacity-70 sm:right-8 sm:p-4"
-  >
-    <ChevronRight size={32} />
-  </button>
-</div>
 
 
       {/* Features Section */}

@@ -8,7 +8,7 @@ const SportsClub = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
   return (
-    <section className="w-full bg-gray-50">
+    <section className="w-full ">
       {/* Hero Image Section */}
       <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
         <img
@@ -36,10 +36,10 @@ const SportsClub = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="text-center px-6 py-8 md:px-12 lg:px-20"
       >
-        <h2 className="text-orange-500 text-3xl md:text-4xl font-bold ">
+        <h2 className="text-orange-500 text-3xl md:text-5xl font-bold ">
           Fusion Sports Academy
         </h2>
-        <p className="text-gray-700 mt-4 text-lg md:text-xl leading-relaxed font-serif">
+        <p className="text-gray-700 mt-2 text-lg md:text-xl leading-relaxed font-serif">
           At Fusion Sports Academy, we are passionate about nurturing talent and
           empowering athletes to reach their full potential. With skilled coaches,
           top-notch facilities, and comprehensive training, we offer exceptional
@@ -60,7 +60,7 @@ const SportsClub = () => {
           <img
             src="https://cdn.pixabay.com/photo/2020/11/27/18/59/tennis-5782695_1280.jpg"
             alt="Sports Training"
-            className="rounded-lg w-full max-h-[32rem] object-cover shadow-lg"
+            className="rounded-lg w-full max-h-[38rem] object-cover shadow-lg"
           />
         </motion.div>
 
@@ -111,7 +111,7 @@ const SportsClub = () => {
       </section>
 
       {/* Coach Plans Section */}
-      <div className="p-6  text-center">
+      <div className="p-6  text-center mt-12">
         <h2 className="text-orange-500 text-3xl font-bold ">
           Choose the Perfect Coach Plan for You
         </h2>

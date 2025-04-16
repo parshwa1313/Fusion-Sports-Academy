@@ -36,7 +36,7 @@ const Sports = () => {
   }, []);
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className=" min-h-screen">
       {/* Sports Section */}
       <section className="bg-white text-gray-900 relative">
         <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
@@ -92,12 +92,12 @@ const Sports = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-2xl md:text-4xl font-bold text-orange-500 text-center "
+          className="text-2xl md:text-4xl font-bold text-orange-500 text-center mt-4"
         >
           Tailored Badminton Coaching for Every Preference
         </motion.h2>
 
-        <div className="relative w-full min-h-[34rem] bg-cover bg-center rounded-xl overflow-hidden">
+        <div className="relative w-full min-h-[36rem] bg-cover bg-center rounded-xl overflow-hidden">
           <motion.div
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
