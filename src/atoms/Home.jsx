@@ -104,10 +104,10 @@ export default function MergedComponent() {
           </li>
         </ul>
 
-        <div className="transform -skew-x-[10deg]">
+        <div className="transform -skew-x-[10deg] ">
           <Link
             to="/details"
-            className="bg-[#5BC34D] text-white px-6 py-2 rounded-sm shadow-md hover:bg-white/30 hover:text-[#5BC34D] hover:shadow-lg hover:border-[#5BC34D] border-2 text-md sm:text-base mt-2"
+            className="bg-[#5BC34D] text-white px-6 py-2 rounded-sm shadow-md hover:bg-white/30 hover:text-[#5BC34D] hover:shadow-lg hover:border-[#5BC34D] border-2 text-md sm:text-base mt-2 inline-block"
           >
             RESERVE A COURT
           </Link>

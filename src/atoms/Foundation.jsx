@@ -78,6 +78,7 @@ export default function Foundation() {
   };
 
   return (
+    
     <div
       className="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat overflow-hidden"
       style={{
@@ -86,12 +87,14 @@ export default function Foundation() {
       }}
     >
       <div className="absolute inset-0 bg-black/50"></div>
+      
       <div className="relative w-full max-w-7xl px-6 sm:px-12 lg:px-20 py-8 space-y-12">
+        
         {/* Header with Back Arrow */}
         <div className="relative">
   {/* Back Arrow in Top-Left Corner */}
   <div
-    className="absolute  cursor-pointer"
+    className="absolute  cursor-pointer w-screen   -left-56 flex items-center justify-start"
     onClick={() => navigate(-1)}
   >
     <svg
@@ -107,7 +110,7 @@ export default function Foundation() {
   </div>
 
   {/* Title in Center */}
-  <div className="mt-16 text-center">
+  <div className="mt-20 text-center">
     <h2 className="text-4xl font-bold text-yellow-400">
       Foundation Development Program
     </h2>
